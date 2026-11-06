@@ -1,0 +1,195 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Chivas Apertura 2026</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+/* Layout: rojiblanco striped masthead, then stats strip, scorers with bars, match log, standings context. */
+:root {
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --fg: #14171f;
+  --muted: #5d6573;
+  --line: #dde0e6;
+  --red: #c8102e;
+  --red-ink: #ffffff;
+  --navy: #0d2a5c;
+  --win: #1d7a46;
+  --draw: #8a6d12;
+  --loss: #b3261e;
+  --stripe: #ffffff;
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-body: "Barlow", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11141b; --surface: #1a1e28; --fg: #eef0f4; --muted: #9aa3b2; --line: #2b3140;
+    --red: #e23a52; --navy: #8fb0ee; --win: #5bd08a; --draw: #e0bf5a; --loss: #f08a82; --stripe: #1a1e28;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11141b; --surface: #1a1e28; --fg: #eef0f4; --muted: #9aa3b2; --line: #2b3140;
+  --red: #e23a52; --navy: #8fb0ee; --win: #5bd08a; --draw: #e0bf5a; --loss: #f08a82; --stripe: #1a1e28;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.5;
+}
+.wrap {
+  max-width: 920px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.mast {
+  background: repeating-linear-gradient(90deg, var(--red) 0 28px, var(--stripe) 28px 56px);
+  border-bottom: 4px solid var(--navy);
+}
+.mast .wrap { padding-block: 40px 28px; }
+.mast h1 {
+  display: inline-block; margin: 0; padding: 6px 16px 2px;
+  background: var(--navy); color: #fff;
+  font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 8vw, 4rem);
+  line-height: 1; text-transform: uppercase; letter-spacing: 0.02em; text-wrap: balance;
+}
+:root[data-theme="dark"] .mast h1 { background: #0d2a5c; }
+.mast p {
+  display: inline-block; margin: 10px 0 0; padding: 4px 12px;
+  background: var(--surface); color: var(--fg); font-size: 0.95rem;
+}
+main { display: flex; flex-direction: column; gap: 40px; padding-block: 32px 48px; }
+h2 {
+  margin: 0 0 14px; font-family: var(--font-display); font-weight: 700;
+  font-size: 1.6rem; text-transform: uppercase; letter-spacing: 0.04em; text-wrap: balance;
+}
+.sub { margin: -8px 0 14px; color: var(--muted); font-size: 0.92rem; max-width: 65ch; }
+
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }
+.stat { background: var(--surface); border: 1px solid var(--line); padding: 12px 14px; min-width: 0; }
+.stat .n { font-family: var(--font-display); font-weight: 700; font-size: 2.2rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.stat .l { margin-top: 4px; font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.stat.hl .n { color: var(--red); }
+
+.scorers { display: flex; flex-direction: column; gap: 8px; }
+.row { display: grid; grid-template-columns: minmax(110px, 170px) 1fr 2ch; align-items: center; gap: 12px; }
+.row .name { font-weight: 600; min-width: 0; overflow-wrap: anywhere; }
+.row .bar { height: 22px; background: var(--line); }
+.row .bar i { display: block; height: 100%; background: var(--red); }
+.row.og .bar i { background: var(--muted); }
+.row .g { font-family: var(--font-display); font-weight: 700; font-size: 1.4rem; text-align: right; font-variant-numeric: tabular-nums; }
+.note { margin: 12px 0 0; color: var(--muted); font-size: 0.88rem; max-width: 65ch; }
+
+.scroll { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); }
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th, td { padding: 9px 12px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); font-weight: 600; }
+tr:last-child td { border-bottom: 0; }
+td.sc { white-space: normal; min-width: 180px; color: var(--muted); font-size: 0.9rem; }
+.pill { display: inline-block; min-width: 1.9em; padding: 1px 8px; text-align: center; font-weight: 600; font-size: 0.85rem; color: #fff; }
+.pill.G { background: var(--win); } .pill.E { background: var(--draw); } .pill.P { background: var(--loss); }
+:root:not([data-theme="light"]) .pill { color: #10131a; }
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .pill { color: #fff; } }
+:root[data-theme="light"] .pill { color: #fff; }
+tr.me td { font-weight: 600; background: color-mix(in srgb, var(--red) 10%, transparent); }
+.src { color: var(--muted); font-size: 0.85rem; max-width: 65ch; }
+.src a { color: var(--navy); }
+a:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+@media (max-width: 520px) { .row { grid-template-columns: 96px 1fr 2ch; gap: 8px; } }
+</style>
+
+<header class="mast">
+  <div class="wrap">
+    <h1>Chivas Apertura 2026</h1>
+    <p>Club Deportivo Guadalajara · Liga MX · DT Gabriel Milito · Datos tras la jornada 15</p>
+  </div>
+</header>
+
+<div class="wrap">
+<main>
+
+  <section aria-labelledby="t-res">
+    <h2 id="t-res">Así van</h2>
+    <div class="stats">
+      <div class="stat hl"><div class="n">29</div><div class="l">Puntos</div></div>
+      <div class="stat"><div class="n">8-5-2</div><div class="l">G-E-P en 15 juegos</div></div>
+      <div class="stat"><div class="n">25</div><div class="l">Goles a favor</div></div>
+      <div class="stat hl"><div class="n">14</div><div class="l">Goles en contra</div></div>
+      <div class="stat"><div class="n">+11</div><div class="l">Diferencia</div></div>
+      <div class="stat"><div class="n">6</div><div class="l">Porterías a cero</div></div>
+    </div>
+    <p class="note">Chivas tiene la mejor defensa del torneo y comparte los 29 puntos con América y Cruz Azul en la cima. Con 10 goles de visitante en 7 juegos, es el único de los tres sin derrotas fuera de casa (3 victorias y 4 empates).</p>
+  </section>
+
+  <section aria-labelledby="t-gol">
+    <h2 id="t-gol">Goleadores del equipo</h2>
+    <p class="sub">Tres jugadores empatan con 5 goles. Tras la salida de Armando González al Olympiacos, el gol se reparte entre varios.</p>
+    <div class="scorers">
+      <div class="row"><span class="name">Roberto Alvarado</span><span class="bar"><i style="width:100%"></i></span><span class="g">5</span></div>
+      <div class="row"><span class="name">Ricardo Marín</span><span class="bar"><i style="width:100%"></i></span><span class="g">5</span></div>
+      <div class="row"><span class="name">Santiago Sandoval</span><span class="bar"><i style="width:100%"></i></span><span class="g">5</span></div>
+      <div class="row"><span class="name">Bryan González</span><span class="bar"><i style="width:40%"></i></span><span class="g">2</span></div>
+      <div class="row"><span class="name">Diego Campillo</span><span class="bar"><i style="width:20%"></i></span><span class="g">1</span></div>
+      <div class="row"><span class="name">Richard Ledezma</span><span class="bar"><i style="width:20%"></i></span><span class="g">1</span></div>
+      <div class="row"><span class="name">Ángel Sepúlveda</span><span class="bar"><i style="width:20%"></i></span><span class="g">1</span></div>
+      <div class="row"><span class="name">Jordan Carrillo</span><span class="bar"><i style="width:20%"></i></span><span class="g">1</span></div>
+      <div class="row"><span class="name">Efraín Álvarez</span><span class="bar"><i style="width:20%"></i></span><span class="g">1</span></div>
+      <div class="row og"><span class="name">Autogoles a favor</span><span class="bar"><i style="width:60%"></i></span><span class="g">3</span></div>
+    </div>
+    <p class="note">Suma 25 goles, igual que el total de la tabla. Los autogoles fueron de Andrés Sánchez (San Luis), Oliveros (Necaxa) y Bagüí (Atlante). Para comparar: el líder de goleo de la liga es Salomón Rondón (Pachuca) con 15.</p>
+  </section>
+
+  <section aria-labelledby="t-part">
+    <h2 id="t-part">Partido a partido</h2>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>J</th><th>Rival</th><th>Sede</th><th>Marcador</th><th></th><th>Goles de Chivas</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Toluca</td><td>Local</td><td>0-2</td><td><span class="pill P">P</span></td><td class="sc">—</td></tr>
+          <tr><td>2</td><td>FC Juárez</td><td>Local</td><td>1-0</td><td><span class="pill G">G</span></td><td class="sc">Alvarado</td></tr>
+          <tr><td>3</td><td>Puebla</td><td>Visita</td><td>1-1</td><td><span class="pill E">E</span></td><td class="sc">Alvarado</td></tr>
+          <tr><td>4</td><td>Santos</td><td>Visita</td><td>1-0</td><td><span class="pill G">G</span></td><td class="sc">Marín</td></tr>
+          <tr><td>5</td><td>Tijuana</td><td>Local</td><td>5-2</td><td><span class="pill G">G</span></td><td class="sc">Sandoval, Marín (2), Alvarado, Campillo</td></tr>
+          <tr><td>6</td><td>Pachuca</td><td>Visita</td><td>1-1</td><td><span class="pill E">E</span></td><td class="sc">Alvarado</td></tr>
+          <tr><td>7</td><td>Atlético San Luis</td><td>Visita</td><td>3-0</td><td><span class="pill G">G</span></td><td class="sc">Autogol, Marín, Ledezma</td></tr>
+          <tr><td>8</td><td>Pumas</td><td>Local</td><td>3-0</td><td><span class="pill G">G</span></td><td class="sc">Sandoval (2), B. González</td></tr>
+          <tr><td>9</td><td>América</td><td>Visita</td><td>2-2</td><td><span class="pill E">E</span></td><td class="sc">B. González, Marín</td></tr>
+          <tr><td>10</td><td>Querétaro</td><td>Local</td><td>0-2</td><td><span class="pill P">P</span></td><td class="sc">—</td></tr>
+          <tr><td>11</td><td>Atlas</td><td>Visita</td><td>1-1</td><td><span class="pill E">E</span></td><td class="sc">Sepúlveda</td></tr>
+          <tr><td>12</td><td>Tigres</td><td>Local</td><td>1-1</td><td><span class="pill E">E</span></td><td class="sc">Carrillo</td></tr>
+          <tr><td>13</td><td>Necaxa</td><td>Local</td><td>1-0</td><td><span class="pill G">G</span></td><td class="sc">Autogol</td></tr>
+          <tr><td>14</td><td>Monterrey</td><td>Visita</td><td>1-0</td><td><span class="pill G">G</span></td><td class="sc">Alvarado</td></tr>
+          <tr><td>15</td><td>Atlante</td><td>Local</td><td>4-2</td><td><span class="pill G">G</span></td><td class="sc">Sandoval (2), Autogol, E. Álvarez</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-tab">
+    <h2 id="t-tab">Parte alta de la tabla</h2>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Pos</th><th>Equipo</th><th>PJ</th><th>G</th><th>E</th><th>P</th><th>GF</th><th>GC</th><th>DG</th><th>Pts</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>América</td><td>15</td><td>8</td><td>5</td><td>2</td><td>36</td><td>21</td><td>+15</td><td>29</td></tr>
+          <tr class="me"><td>2</td><td>Chivas</td><td>15</td><td>8</td><td>5</td><td>2</td><td>25</td><td>14</td><td>+11</td><td>29</td></tr>
+          <tr><td>3</td><td>Cruz Azul</td><td>15</td><td>9</td><td>2</td><td>4</td><td>34</td><td>24</td><td>+10</td><td>29</td></tr>
+          <tr><td>4</td><td>Atlas</td><td>15</td><td>8</td><td>3</td><td>4</td><td>26</td><td>26</td><td>0</td><td>27</td></tr>
+          <tr><td>5</td><td>Toluca</td><td>15</td><td>6</td><td>6</td><td>3</td><td>31</td><td>21</td><td>+10</td><td>24</td></tr>
+          <tr><td>6</td><td>Tijuana</td><td>15</td><td>5</td><td>7</td><td>3</td><td>25</td><td>21</td><td>+4</td><td>22</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <p class="src">Cifras al 5 de noviembre de 2026, con 15 jornadas jugadas. Goleadores, marcadores y tabla del sitio oficial del club
+    (<a href="https://www.chivasdecorazon.com.mx/es/estadisticas/tabla_general/Apertura-2026">chivasdecorazon.com.mx</a>),
+    contrastados con <a href="https://futboltotal.futbol/league/liga-mx/clasificacion">futboltotal.futbol</a> y la nota de EFE sobre el 4-2 al Atlante en
+    <a href="https://www.cronica.com.mx/deportes/2026/10/31/guadalajara-sube-a-la-cima-del-apertura-2026-en-espera-de-lo-que-haga-el-america/">La Crónica</a>.
+    El orden entre los equipos empatados en puntos sigue la diferencia de goles.</p>
+</main>
+</div>
+
+</body></html>
